@@ -16,8 +16,9 @@ email: patriciehermanova@gmail.com
     # (číslice musí být unikátní a nesmí začínat 0)
 # C/ hráč hádá číslo. Program jej upozorní, 
     # pokud zadá číslo kratší nebo delší než 4 čísla, 
-    # pokud bude obsahovat duplicity, začínat nulou, 
-    # příp. obsahovat nečíselné znaky
+    # obsahovat duplicity, 
+    # začínat nulou, 
+    # obsahovat nečíselné znaky
 # D/ program vyhodnotí tip uživatele
 # E/ program dále vypíše počet 
     # bull/bulls (pokud uživatel uhodne jak číslo, tak jeho umístění)
@@ -38,16 +39,16 @@ import random
 
 #------------------------------------------------------------------------------
 
-#vytvoření tajného čísla
+#vytvoření tajného čísla (první čislice nesmí být nula, vždy unikátní)
 def vygeneruj_tajne_cislo():
     cislice = list('0123456789')
-    prvni_cislice = random.choice(cislice[1:]) #první čislice nesmí být nula
+    prvni_cislice = random.choice(cislice[1:])
     cislice.remove(prvni_cislice)
     tajne_cislo = prvni_cislice
 
     for _ in range(3):
         dalsi = random.choice(cislice)
-        cislice.remove(dalsi) #vždy unikátní číslice
+        cislice.remove(dalsi)
         tajne_cislo += dalsi
 
     return tajne_cislo
@@ -66,6 +67,31 @@ print("Hledej 4místné číslo, kombinace jsou unikátní a nezačínají nulou
 print(oddelovac)
 #------------------------------------------------------------------------------
 
-#input od hráče
+#tip od hráče
 hracuv_tip= input("Zadej svůj tip")
-print ("Zadal jsi:", hracuv_tip)
+
+print(oddelovac)
+#------------------------------------------------------------------------------
+
+#kontrola správnosti formátu tipu (4 znaky, číslice, nezačína 0, unikátnost)
+def spravny_format(tip):
+    if len(tip) != 4:
+        return False
+    
+    if not tip.isdigit():
+        return False
+    
+    if tip[0] == "0":
+        return False
+    
+    if len(set(tip)) != 4:
+        return False
+    
+    return True
+
+#zpráva o výsledku kontroly správnosti formátu
+if spravny_format(hracuv_tip):
+    print ("Zadal jsi:", hracuv_tip)
+
+else:
+    print("Nesprávný formát, zkus to znovu!")

@@ -53,9 +53,7 @@ def vygeneruj_tajne_cislo():
 
     return tajne_cislo
 
-#test funkce, pak zakomentovat
-#tajne_cislo = vygeneruj_tajne_cislo()
-#print("Tajné číslo:", tajne_cislo)
+tajne_cislo = vygeneruj_tajne_cislo()
 
 print(oddelovac)
 #------------------------------------------------------------------------------
@@ -102,3 +100,23 @@ print("Zadal jsi:", hracuv_tip)
 
 print(oddelovac)
 #------------------------------------------------------------------------------
+
+#porovnání tajného čísla a tipu od hráče
+#bull = správná číslice na správné pozici
+#cow = číslice existuje v tajném čísle, ale na jiné pozici
+
+def porovnej_cisla(tajne_cislo, tip):
+    bulls = 0
+    cows = 0
+
+    for i in range(4):
+        if tip[i] == tajne_cislo[i]:
+            bulls += 1
+        elif tip[i] in tajne_cislo:
+            cows += 1
+    
+    return bulls, cows
+
+bulls, cows = porovnej_cisla(tajne_cislo, hracuv_tip)
+
+

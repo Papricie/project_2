@@ -60,19 +60,6 @@ def vygeneruj_tajne_cislo():
 print(oddelovac)
 #------------------------------------------------------------------------------
 
-#pozdrav a úvod
-print("Ahoj, zahrajeme si hru bulls and cows!")
-print("Hledej 4místné číslo, kombinace jsou unikátní a nezačínají nulou")
-
-print(oddelovac)
-#------------------------------------------------------------------------------
-
-#tip od hráče
-hracuv_tip= input("Zadej svůj tip")
-
-print(oddelovac)
-#------------------------------------------------------------------------------
-
 #kontrola správnosti formátu tipu (4 znaky, číslice, nezačína 0, unikátnost)
 def spravny_format(tip):
     if len(tip) != 4:
@@ -89,9 +76,29 @@ def spravny_format(tip):
     
     return True
 
-#zpráva o výsledku kontroly správnosti formátu
-if spravny_format(hracuv_tip):
-    print ("Zadal jsi:", hracuv_tip)
+print(oddelovac)
+#------------------------------------------------------------------------------
 
-else:
-    print("Nesprávný formát, zkus to znovu!")
+#znovuzadání tipu z důvodu nesprávného formátu
+def ziskej_tip_od_hrace():
+    while True:
+        tip = input("Zadej svůj tip (4 různá čísla, nezačínej nulou): ")
+        if spravny_format(tip):
+            return tip
+        else:
+            print("Nesprávný formát! Zkus to znovu.")
+
+
+#pozdrav a úvod
+print("Ahoj, zahrajeme si hru bulls and cows!")
+print("Hledej 4místné číslo, kombinace jsou unikátní a nezačínají nulou")
+
+print(oddelovac)
+#------------------------------------------------------------------------------
+
+#tip od hráče
+hracuv_tip = ziskej_tip_od_hrace()
+print("Zadal jsi:", hracuv_tip)
+
+print(oddelovac)
+#------------------------------------------------------------------------------

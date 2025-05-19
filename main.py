@@ -75,7 +75,7 @@ def spravny_format(tip):
 
 print(oddelovac)
 #------------------------------------------------------------------------------
-#pozdrav a úvod
+#pozdrav a pravidla - DOPLNIT
 print("Ahoj, zahrajeme si hru Bulls and cows!")
 print("Hledej 4místné číslo, kombinace jsou unikátní a nezačínají nulou")
 

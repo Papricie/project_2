@@ -36,16 +36,12 @@ oddelovac = "-" * 50
 #importování knihovny random
 import random
 
-#pozdrav
-print("Ahoj, zahrajeme si hru bulls and cows!")
-
-print(oddelovac)
 #------------------------------------------------------------------------------
 
 #vytvoření tajného čísla
 def vygeneruj_tajne_cislo():
     cislice = list('0123456789')
-    prvni_cislice = random.choice(cislice[1:]) #první čislice nesmí být 0
+    prvni_cislice = random.choice(cislice[1:]) #první čislice nesmí být nula
     cislice.remove(prvni_cislice)
     tajne_cislo = prvni_cislice
 
@@ -56,9 +52,20 @@ def vygeneruj_tajne_cislo():
 
     return tajne_cislo
 
-#test funkce
+#test funkce, pak zakomentovat
 #tajne_cislo = vygeneruj_tajne_cislo()
 #print("Tajné číslo:", tajne_cislo)
 
 print(oddelovac)
 #------------------------------------------------------------------------------
+
+#pozdrav a úvod
+print("Ahoj, zahrajeme si hru bulls and cows!")
+print("Hledej 4místné číslo, kombinace jsou unikátní a nezačínají nulou")
+
+print(oddelovac)
+#------------------------------------------------------------------------------
+
+#input od hráče
+hracuv_tip= input("Zadej svůj tip")
+print ("Zadal jsi:", hracuv_tip)

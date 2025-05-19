@@ -55,7 +55,6 @@ def vygeneruj_tajne_cislo():
 
 tajne_cislo = vygeneruj_tajne_cislo()
 
-print(oddelovac)
 #------------------------------------------------------------------------------
 
 #kontrola správnosti formátu tipu (4 znaky, číslice, nezačína 0, unikátnost)
@@ -76,8 +75,14 @@ def spravny_format(tip):
 
 print(oddelovac)
 #------------------------------------------------------------------------------
+#pozdrav a úvod
+print("Ahoj, zahrajeme si hru bulls and cows!")
+print("Hledej 4místné číslo, kombinace jsou unikátní a nezačínají nulou")
 
-#znovuzadání tipu z důvodu nesprávného formátu
+#pomoc - zobrazení vygenerovaného čísla, pak zakomentovat
+print("Vygenerované číslo je:", tajne_cislo)
+
+#získání. případně znovuzadání tipu z důvodu nesprávného formátu
 def ziskej_tip_od_hrace():
     while True:
         tip = input("Zadej svůj tip (4 různá čísla, nezačínej nulou): ")
@@ -86,15 +91,6 @@ def ziskej_tip_od_hrace():
         else:
             print("Nesprávný formát! Zkus to znovu.")
 
-
-#pozdrav a úvod
-print("Ahoj, zahrajeme si hru bulls and cows!")
-print("Hledej 4místné číslo, kombinace jsou unikátní a nezačínají nulou")
-
-print(oddelovac)
-#------------------------------------------------------------------------------
-
-#tip od hráče
 hracuv_tip = ziskej_tip_od_hrace()
 print("Zadal jsi:", hracuv_tip)
 
@@ -117,6 +113,18 @@ def porovnej_cisla(tajne_cislo, tip):
     
     return bulls, cows
 
-bulls, cows = porovnej_cisla(tajne_cislo, hracuv_tip)
+while True:
+    hracuv_tip = ziskej_tip_od_hrace()
+    print("Zadal jsi:", hracuv_tip)
 
+    bulls, cows = porovnej_cisla(tajne_cislo, hracuv_tip)
+
+    bull_text = "bull" if bulls == 1 else "bulls"
+    cow_text = "cow" if cows == 1 else "cows"
+
+    print(f"{bulls} {bull_text}, {cows} {cow_text}")
+
+    if bulls == 4:
+        print("Juhuu, uhodl jsi!")
+        break
 

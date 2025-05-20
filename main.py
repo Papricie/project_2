@@ -76,12 +76,16 @@ def spravny_format(tip):
 print(oddelovac)
 #------------------------------------------------------------------------------
 #pozdrav a pravidla
-print("Ahoj, zahrajeme si hru Bulls and cows!")
-print(oddelovac)
-print("Pravidla hry:")
-print("Hledej 4místné číslo, kombinace jsou unikátní a nezačínají nulou")
-print("bull znamená správná číslice na správné pozici")
-print("cow znamená správná číslice, ale špatné pozici")
+def pozdrav_a_vysvetli():
+    print(f"""
+Ahoj, zahrajeme si hru Bulls and Cows!
+Pravidla hry:
+- hledej 4místné číslo
+- bull znamená správná číslice na správné pozici
+- cow znamená správná číslice, ale na špatné pozici
+""")
+    
+pozdrav_a_vysvetli()
 
 #------------------------------------------------------------------------------
 #TOTO ZAKOMENTOVAT - zobrazení vygenerovaného čísla
@@ -122,7 +126,6 @@ while True:
     hracuv_tip = ziskej_tip_od_hrace()
     print(oddelovac)
     print("Zadal jsi:", hracuv_tip)
-    print(oddelovac)
 
     bulls, cows = porovnej_cisla(tajne_cislo, hracuv_tip)
 

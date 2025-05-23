@@ -75,6 +75,7 @@ def spravny_format(tip):
 
 print(oddelovac)
 #------------------------------------------------------------------------------
+
 #pozdrav a pravidla
 def pozdrav_a_vysvetli():
     print(f"""

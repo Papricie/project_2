@@ -90,7 +90,9 @@ print(oddelovac)
 
 #pozdrav a vysvetli
 def pozdrav_a_vysvetli() -> None:
-    """Zobrazí pozdrav a pravidla hry."""
+    """
+    Zobrazí pozdrav a pravidla hry.
+    """
     print(f"""
 Ahoj, zahrajeme si hru Bulls and Cows!
 Pravidla hry:
@@ -109,7 +111,10 @@ Pravidla hry:
 #------------------------------------------------------------------------------
 
 #získání, případně znovuzadání tipu z důvodu nesprávného formátu
-def ziskej_tip_od_hrace():
+def ziskej_tip_od_hrace() -> str:
+    """
+    Získá tip od hráče a opakuje výzvu, dokud není zadán správný formát.
+    """
     while True:
         tip = input("Zadej svůj tip (4 různá čísla, nezačínej nulou): ")
         if spravny_format(tip):

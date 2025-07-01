@@ -105,10 +105,6 @@ Pravidla hry:
 #přesun z globálního prostoru do bloku if __name__ == "__main__" na konci kódu
 
 #------------------------------------------------------------------------------
-#TOTO ZAKOMENTOVAT - zobrazení vygenerovaného čísla
-#print(oddelovac)
-#print("Vygenerované číslo je:", tajne_cislo)
-#------------------------------------------------------------------------------
 
 #získání, případně znovuzadání tipu z důvodu nesprávného formátu
 def ziskej_tip_od_hrace() -> str:
@@ -154,21 +150,26 @@ if __name__ == "__main__":
     pozdrav_a_vysvetli()
     print(oddelovac)
     tajne_cislo = vygeneruj_tajne_cislo()
+    
+    #------------------------------------------------------------------------------
+    #TOTO ZAKOMENTOVAT - pouze pro zobrazení vygenerovaného čísla
+    #print("Vygenerované číslo je:", tajne_cislo)
+    #------------------------------------------------------------------------------
 
-while True:
-    hracuv_tip = ziskej_tip_od_hrace()
-    print(oddelovac)
-    print("Zadal jsi:", hracuv_tip)
+    while True:
+        hracuv_tip = ziskej_tip_od_hrace()
+        print(oddelovac)
+        print("Zadal jsi:", hracuv_tip)
 
-    bulls, cows = porovnej_cisla(tajne_cislo, hracuv_tip)
+        bulls, cows = porovnej_cisla(tajne_cislo, hracuv_tip)
 
-    bull_text = "bull" if bulls == 1 else "bulls"
-    cow_text = "cow" if cows == 1 else "cows"
+        bull_text = "bull" if bulls == 1 else "bulls"
+        cow_text = "cow" if cows == 1 else "cows"
 
-    print(f"{bulls} {bull_text}, {cows} {cow_text}")
-    print(oddelovac)
+        print(f"{bulls} {bull_text}, {cows} {cow_text}")
+        print(oddelovac)
 
-    if bulls == 4:
-        print("Juhuu, uhodl jsi!")
-        break
+        if bulls == 4:
+            print("Juhuu, uhodl jsi!")
+            break
 

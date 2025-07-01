@@ -63,7 +63,14 @@ def vygeneruj_tajne_cislo() -> str:
 #------------------------------------------------------------------------------
 
 #kontrola správnosti formátu tipu (4 znaky, číslice, nezačína 0, unikátnost)
-def spravny_format(tip):
+def spravny_format(tip: str) -> bool:
+    """
+    Zkontroluje, zda má tip správný formát:
+    - 4 číslice
+    - nezačíná nulou
+    - obsahuje pouze čísla
+    - číslice jsou unikátní
+    """
     if len(tip) != 4:
         return False
     

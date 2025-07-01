@@ -40,7 +40,11 @@ import random
 #------------------------------------------------------------------------------
 
 #vytvoření tajného čísla (první čislice nesmí být nula, vždy unikátní)
-def vygeneruj_tajne_cislo():
+def vygeneruj_tajne_cislo() -> str:
+    """
+    Vygeneruje náhodné 4místné číslo s unikátními číslicemi.
+    První číslice není nula.
+    """
     cislice = list('0123456789')
     prvni_cislice = random.choice(cislice[1:])
     cislice.remove(prvni_cislice)
@@ -53,7 +57,8 @@ def vygeneruj_tajne_cislo():
 
     return tajne_cislo
 
-tajne_cislo = vygeneruj_tajne_cislo()
+#tajne_cislo = vygeneruj_tajne_cislo()
+#přesun z globálního prostoru do bloku if __name__ == "__main__" na konci kódu
 
 #------------------------------------------------------------------------------
 

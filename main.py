@@ -147,6 +147,14 @@ def porovnej_cisla(tajne_cislo: str, tip: str) -> tuple[int, int]:
     
     return bulls, cows
 
+#------------------------------------------------------------------------------
+
+#hlavní běh programu přesunut do tohoto bloku
+if __name__ == "__main__":
+    pozdrav_a_vysvetli()
+    print(oddelovac)
+    tajne_cislo = vygeneruj_tajne_cislo()
+
 while True:
     hracuv_tip = ziskej_tip_od_hrace()
     print(oddelovac)

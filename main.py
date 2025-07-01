@@ -88,8 +88,9 @@ def spravny_format(tip: str) -> bool:
 print(oddelovac)
 #------------------------------------------------------------------------------
 
-#pozdrav a pravidla
-def pozdrav_a_vysvetli():
+#pozdrav a vysvetli
+def pozdrav_a_vysvetli() -> None:
+    """Zobrazí pozdrav a pravidla hry."""
     print(f"""
 Ahoj, zahrajeme si hru Bulls and Cows!
 Pravidla hry:
@@ -98,7 +99,8 @@ Pravidla hry:
 - cow znamená správná číslice, ale na špatné pozici
 """)
     
-pozdrav_a_vysvetli()
+#pozdrav_a_vysvetli()
+#přesun z globálního prostoru do bloku if __name__ == "__main__" na konci kódu
 
 #------------------------------------------------------------------------------
 #TOTO ZAKOMENTOVAT - zobrazení vygenerovaného čísla

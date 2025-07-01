@@ -130,7 +130,12 @@ print(oddelovac)
 #bull = správná číslice na správné pozici
 #cow = číslice existuje v tajném čísle, ale na jiné pozici
 
-def porovnej_cisla(tajne_cislo, tip):
+def porovnej_cisla(tajne_cislo: str, tip: str) -> tuple[int, int]:
+    """
+    Porovná tip a tajné číslo a vrátí počet bulls a cows.
+    - bull: správné číslo na správné pozici
+    - cow: správné číslo, ale na jiné pozici
+    """
     bulls = 0
     cows = 0
 

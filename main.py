@@ -145,15 +145,18 @@ def porovnej_cisla(tajne_cislo: str, tip: str) -> tuple[int, int]:
 
 #------------------------------------------------------------------------------
 
-#hlavní běh programu přesunut do tohoto bloku
-if __name__ == "__main__":
+#vytvoření jedné řídící funkce, kterou pak zavolá if __name__ == "__main__"
+def spust_hru() -> None:
+    """
+    Spustí hlavní smyčku hry Bulls and Cows.
+    """
     pozdrav_a_vysvetli()
     print(oddelovac)
     tajne_cislo = vygeneruj_tajne_cislo()
     
     #------------------------------------------------------------------------------
     #TOTO ZAKOMENTOVAT - pouze pro zobrazení vygenerovaného čísla
-    #print("Vygenerované číslo je:", tajne_cislo)
+    print("Vygenerované číslo je:", tajne_cislo)
     #------------------------------------------------------------------------------
 
     while True:
@@ -172,4 +175,8 @@ if __name__ == "__main__":
         if bulls == 4:
             print("Juhuu, uhodl jsi!")
             break
+
+#hlavní běh programu přesunut do tohoto bloku
+if __name__ == "__main__":
+    spust_hru()
 
